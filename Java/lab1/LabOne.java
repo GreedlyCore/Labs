@@ -1,18 +1,27 @@
-package lab1;
 
-import java.util.Arrays;
+import java.math.BigDecimal;
 
 public class LabOne {
 
     public static void printMatrix(double[][] matrix) {
-        //System.out.println(Arrays.toString(matrix));
+        // System.out.println(Arrays.toString(matrix));
         for (int row = 0; row < matrix.length; row++) {
-        for (int col = 0; col < matrix[row].length; col++) {
-        System.out.printf("%.5f", matrix[row][col]);
-        System.out.print(" ");
+            for (int col = 0; col < matrix[row].length; col++) {
+
+                if (!Double.isInfinite(matrix[row][col])) {
+                    BigDecimal abd = new BigDecimal(matrix[row][col]);
+                    var num = String.format("%.5f", abd);
+                    System.out.printf("%12s", num);
+                } else {
+                    var num = String.format("%.5f", matrix[row][col]);
+                    System.out.printf("%12s", num);
+                }
+
+                System.out.print(" ");
+            }
+            System.out.println();
         }
-        System.out.println();
-        }
+
     }
 
     public static void main(String[] args) {
@@ -24,7 +33,7 @@ public class LabOne {
         for (short i = 1; i <= 23; i++) {
 
             if (i % 2 != 0) {
-                a[j] =  i;
+                a[j] = i;
                 j++;
             }
 
@@ -34,7 +43,6 @@ public class LabOne {
 
         for (int i = 0; i < x.length; i++) {
             x[i] = -5 + (13 * Math.random());
-            // System.out.println(x[i]);
 
         }
 
@@ -46,10 +54,10 @@ public class LabOne {
             for (int k = 0; k < matrixA[i].length; k++) {
 
                 flag = false;
-                
+
                 if (a[i] == 5) {
 
-                    matrixA[i][k] = Math.pow( (Math.cos(Math.cbrt(x[k])) / 2) , 2);
+                    matrixA[i][k] = Math.pow((Math.cos(Math.cbrt(x[k])) / 2), 2);
 
                 } else {
 
@@ -59,11 +67,11 @@ public class LabOne {
                             matrixA[i][k] = Math.pow(Math.E, Math.pow(Math.E, Math.tan(x[k])));
                             flag = true;
                             break;
-                            
+
                         }
                     }
                     if (!flag) {
-                        double h = Math.tan( Math.atan(((2*(x[k]+1.5)))/(3*13)) );
+                        double h = Math.tan(Math.atan(((2 * (x[k] + 1.5))) / (3 * 13)));
                         double g = (1 / 3) * (Math.cbrt(Math.pow(Math.E, Math.cos(x[k]))) + 0.5);
                         matrixA[i][k] = Math.pow(g, h);
                     }
