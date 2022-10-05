@@ -5,8 +5,6 @@ import ru.ifmo.se.pokemon.Type;
 
 public class Alomomola extends Pokemon {
 
-    private String name;
-
 
     public Alomomola(String name, int lvl) {
 
@@ -14,8 +12,8 @@ public class Alomomola extends Pokemon {
         this.addType(Type.WATER);
         this.setStats(165, 75, 80, 40, 45, 65);
 
-        this.setMove(new HydroPump(), new Psychic(), new Waterfall());
- 
+        this.setMove(new HydroPump(), new Psychic(), new Waterfall(), new DoubleTeam());
+
     }
 
     public Alomomola() {
@@ -23,10 +21,7 @@ public class Alomomola extends Pokemon {
 
         this.addType(Type.WATER);
         this.setStats(165, 75, 80, 40, 45, 65);
-
-        this.setMove(new HydroPump());
-        this.setMove(new Psychic());
-        this.setMove(new Waterfall());
+        this.setMove(new HydroPump(), new Psychic(), new Waterfall(), new DoubleTeam());
     }
 
 }

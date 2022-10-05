@@ -3,8 +3,6 @@ package lab2.Alomomola;
 import ru.ifmo.se.pokemon.Effect;
 import ru.ifmo.se.pokemon.PhysicalMove;
 import ru.ifmo.se.pokemon.Pokemon;
-
-import ru.ifmo.se.pokemon.Stat;
 import ru.ifmo.se.pokemon.Status;
 import ru.ifmo.se.pokemon.Type;
 
@@ -14,7 +12,6 @@ public class Waterfall extends PhysicalMove {
         this.type = Type.WATER;
         this.power = 80;
         this.accuracy = 100;
-
     }
 
     @Override
@@ -30,7 +27,7 @@ public class Waterfall extends PhysicalMove {
 
     @Override
     protected void applyOppEffects(Pokemon p) {
-        if (new Effect().chance(0.2).success()) {
+        if (new Effect().chance(0.2).success() && p.getCondition()==Status.NORMAL) {
             Effect.flinch(p);
         }
 
