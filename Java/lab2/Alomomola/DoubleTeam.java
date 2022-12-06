@@ -10,10 +10,7 @@ import ru.ifmo.se.pokemon.Type;
 public class DoubleTeam extends StatusMove{
 
     public DoubleTeam(){
-        this.type = Type.WATER;
-        this.power = 110;
-        this.accuracy = 80;
-        
+        this.type = Type.NORMAL;
     }
 
     @Override

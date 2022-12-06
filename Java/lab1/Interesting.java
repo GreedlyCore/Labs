@@ -1,5 +1,4 @@
 
-
 public class Interesting {
     
     public static void main(String[] args) {
